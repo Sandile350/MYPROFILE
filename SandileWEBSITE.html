@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandile Mabokachaba | Cyber Portfolio</title>
+
+
+
+<style>
+:root{
+  --neon-blue:#00eaff;
+  --neon-pink:#ff00ff;
+  --neon-purple:#8b5cf6;
+  --dark:#020617;
+  --glass:rgba(255,255,255,0.06);
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Orbitron',sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  overflow-x:hidden;
+}
+
+/* CYBER GRID BACKGROUND */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size:40px 40px;
+  z-index:-2;
+}
+
+/* GLOW ORBS */
+.orbs span{
+  position:fixed;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  filter:blur(130px);
+  opacity:0.6;
+  animation:float 10s infinite alternate ease-in-out;
+  z-index:-1;
+}
+.orbs span:nth-child(1){
+  background:var(--neon-blue);
+  top:10%;
+  left:10%;
+}
+.orbs span:nth-child(2){
+  background:var(--neon-pink);
+  bottom:10%;
+  right:10%;
+  animation-delay:-4s;
+}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-80px);}
+}
+
+/* HERO */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
+}
+
+.hero{
+  animation:fadeUp 1.2s ease forwards;
+}
+
+/* PROFILE IMAGE */
+.profile{
+  width:170px;
+  height:170px;
+  margin:auto;
+  border-radius:50%;
+  padding:5px;
+  background:conic-gradient(var(--neon-blue),var(--neon-pink),var(--neon-blue));
+  animation:rotate 6s linear infinite;
+  box-shadow:0 0 50px var(--neon-blue);
+}
+
+.profile img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #020617;
+}
+
+@keyframes rotate{
+  to{transform:rotate(360deg);}
+}
+
+header h1{
+  font-size:3rem;
+  margin-top:30px;
+  text-shadow:0 0 20px var(--neon-blue);
+}
+
+header p{
+  margin-top:10px;
+  font-size:1.2rem;
+  color:#c7d2fe;
+}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:80px auto;
+  padding:45px;
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 0 40px rgba(0,255,255,0.15);
+  animation:fadeUp 1.3s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+h2{
+  font-size:1.9rem;
+  margin-bottom:20px;
+  color:var(--neon-blue);
+}
+
+h2::after{
+  content:'';
+  width:70px;
+  height:4px;
+  display:block;
+  background:linear-gradient(90deg,var(--neon-blue),var(--neon-pink));
+  margin-top:10px;
+  box-shadow:0 0 15px var(--neon-blue);
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.skill{
+  padding:14px 22px;
+  border-radius:30px;
+  background:rgba(0,255,255,0.08);
+  border:1px solid var(--neon-blue);
+  box-shadow:0 0 15px rgba(0,255,255,0.5);
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:translateY(-8px) scale(1.08);
+  box-shadow:0 0 30px var(--neon-pink),0 0 60px var(--neon-blue);
+}
+
+/* PROJECTS */
+.projects li{
+  list-style:none;
+  padding-left:35px;
+  margin-bottom:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+.projects li::before{
+  content:'▸';
+  position:absolute;
+  left:0;
+  color:var(--neon-blue);
+}
+
+.projects li:hover{
+  transform:translateX(12px);
+  color:var(--neon-pink);
+}
+
+/* CONTACT */
+.contact{
+  line-height:2;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  header h1{font-size:2.2rem;}
+  section{margin:60px 20px;padding:35px;}
+}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <span></span>
+  <span></span>
+</div>
+
+<header>
+  <div class="hero">
+    <div class="profile">
+      <img src="Profile.jpeg" alt="Sandile Mabokachaba">
+    </div>
+    <h1>Sandile Mabokachaba</h1>
+    <p>IT Student • Web Developer • App Developer</p>
+  </div>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am Sandile Mabokachaba, an IT student passionate about futuristic
+    technology, web development, and app development. I enjoy building
+    visually striking, high‑performance digital experiences inspired
+    by cyber and neon aesthetics.
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span class="skill">HTML</span>
+    <span class="skill">CSS</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">Web Development</span>
+    <span class="skill">App Development</span>
+    <span class="skill">UI / UX</span>
+    <span class="skill">Problem Solving</span>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <ul class="projects">
+    <li>Cyber‑Themed Portfolio Website</li>
+    <li>Student Management Application</li>
+    <li>Business Website & App</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p class="contact">
+    Email: your-email@example.com<br>
+    GitHub: github.com/yourusername<br>
+    LinkedIn: linkedin.com/in/yourname
+  </p>
+</section>
+
+<footer>
+  © 2026 Sandile Mabokachaba • Neon Cyber Identity ⚡
+</footer>
+
+</body>
+</html>
